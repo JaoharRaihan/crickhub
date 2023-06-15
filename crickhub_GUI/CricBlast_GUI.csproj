@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{198916E4-2412-4F3A-BDD8-49650C6B7A2E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CricBlast_GUI</RootNamespace>
+    <AssemblyName>CricBlast</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>CricBlast.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.2.5, Culture=neutral, PublicKeyToken=e4b9cdd7b4cde4b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.2.5\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Players, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Players.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Teams, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Teams.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\Admin.cs" />
+    <Compile Include="Database\ConnectionString.cs" />
+    <Compile Include="Database\ConvertImage.cs" />
+    <Compile Include="Database\Account.cs" />
+    <Compile Include="Database\Login.cs" />
+    <Compile Include="Database\Match.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin Controls\AddUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Admin Controls\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin Controls\Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Admin Controls\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin Controls\ManageUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Admin Controls\ManageUser.Designer.cs">
+      <DependentUpon>ManageUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin Controls\ProjectInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Admin Controls\ProjectInfo.Designer.cs">
+      <DependentUpon>ProjectInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExitMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ExitMessage.Designer.cs">
+      <DependentUpon>ExitMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SelectTeams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SelectTeams.Designer.cs">
+      <DependentUpon>SelectTeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin Controls\TournamentsAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Admin Controls\TournamentsAdmin.Designer.cs">
+      <DependentUpon>TournamentsAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin Controls\UserList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Admin Controls\UserList.Designer.cs">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TournamentResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TournamentResult.Designer.cs">
+      <DependentUpon>TournamentResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User Controls\CreateAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\User Controls\CreateAccount.Designer.cs">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MatchHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MatchHistory.Designer.cs">
+      <DependentUpon>MatchHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User Controls\GamePlayPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\User Controls\GamePlayPanel.Designer.cs">
+      <DependentUpon>GamePlayPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User Controls\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\User Controls\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User Controls\PlayerStats.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\User Controls\PlayerStats.Designer.cs">
+      <DependentUpon>PlayerStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User Controls\MyTeam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\User Controls\MyTeam.Designer.cs">
+      <DependentUpon>MyTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User Controls\CustomizeTeam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\User Controls\CustomizeTeam.Designer.cs">
+      <DependentUpon>CustomizeTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User Controls\AddPlayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\User Controls\AddPlayer.Designer.cs">
+      <DependentUpon>AddPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User Controls\PlayMatch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\User Controls\PlayMatch.Designer.cs">
+      <DependentUpon>PlayMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin Controls\AdminPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Admin Controls\AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User Controls\TournamentPlay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\User Controls\TournamentPlay.Designer.cs">
+      <DependentUpon>TournamentPlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User Controls\TournamentPlayError.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\User Controls\TournamentPlayError.Designer.cs">
+      <DependentUpon>TournamentPlayError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\User Controls\Welcome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\User Controls\Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChooseTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ChooseTeam.Designer.cs">
+      <DependentUpon>ChooseTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AdminProfileView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AdminProfileView.Designer.cs">
+      <DependentUpon>AdminProfileView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MessageBoxYesNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MessageBoxYesNo.Designer.cs">
+      <DependentUpon>MessageBoxYesNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MessageBoxOk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MessageBoxOk.Designer.cs">
+      <DependentUpon>MessageBoxOk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Recover.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Recover.Designer.cs">
+      <DependentUpon>Recover.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Selected.cs" />
+    <Compile Include="UI\SelectStadium.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SelectStadium.Designer.cs">
+      <DependentUpon>SelectStadium.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UI\Admin Controls\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Admin Controls\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Admin Controls\ManageUser.resx">
+      <DependentUpon>ManageUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Admin Controls\ProjectInfo.resx">
+      <DependentUpon>ProjectInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExitMessage.resx">
+      <DependentUpon>ExitMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SelectTeams.resx">
+      <DependentUpon>SelectTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Admin Controls\TournamentsAdmin.resx">
+      <DependentUpon>TournamentsAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Admin Controls\UserList.resx">
+      <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ChooseTeam.resx">
+      <DependentUpon>ChooseTeam.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TournamentResult.resx">
+      <DependentUpon>TournamentResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User Controls\CreateAccount.resx">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User Controls\GamePlayPanel.resx">
+      <DependentUpon>GamePlayPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User Controls\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MatchHistory.resx">
+      <DependentUpon>MatchHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User Controls\PlayerStats.resx">
+      <DependentUpon>PlayerStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User Controls\MyTeam.resx">
+      <DependentUpon>MyTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User Controls\CustomizeTeam.resx">
+      <DependentUpon>CustomizeTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User Controls\AddPlayer.resx">
+      <DependentUpon>AddPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User Controls\PlayMatch.resx">
+      <DependentUpon>PlayMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Admin Controls\AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User Controls\TournamentPlay.resx">
+      <DependentUpon>TournamentPlay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User Controls\TournamentPlayError.resx">
+      <DependentUpon>TournamentPlayError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\User Controls\Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AdminProfileView.resx">
+      <DependentUpon>AdminProfileView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MessageBoxYesNo.resx">
+      <DependentUpon>MessageBoxYesNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MessageBoxOk.resx">
+      <DependentUpon>MessageBoxOk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Recover.resx">
+      <DependentUpon>Recover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SelectStadium.resx">
+      <DependentUpon>SelectStadium.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_Male_WhiteBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eye_Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eye_Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin_Colored.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_Colored.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_Colored.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unknown_User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_Female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SubHome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check_Mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error_Mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning_Mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="CricBlast.ico" />
+    <Content Include="Libraries\Players.dll" />
+    <Content Include="Libraries\Teams.dll" />
+    <None Include="Resources\Icon_Tournament.png" />
+    <None Include="Resources\Icon_PlayerStats.png" />
+    <None Include="Resources\Icon_Play.png" />
+    <None Include="Resources\Icon_MyTeam.png" />
+    <None Include="Resources\Icon_ManageUser.png" />
+    <None Include="Resources\Icon_Info.png" />
+    <None Include="Resources\Icon_Dashboard.png" />
+    <None Include="Resources\Icon_CustomizeTeam.png" />
+    <None Include="Resources\Icon_AddUser.png" />
+    <None Include="Resources\CricBlast.ico" />
+    <None Include="Resources\PlayingRecords.png" />
+    <None Include="Resources\Tournament.png" />
+    <None Include="Resources\Admin_Gray_Background.png" />
+    <None Include="Resources\Trophy.png" />
+    <None Include="Resources\Question_Mark.png" />
+    <None Include="Resources\Project Details.png" />
+    <None Include="Resources\Admin_Panel.png" />
+    <None Include="Resources\RefreshShadowed_Colored.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
